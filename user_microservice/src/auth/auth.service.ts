@@ -14,7 +14,6 @@ export class AuthService {
     constructor(
         @InjectModel(User) private userRepository: typeof User,
         private jwtService: JwtService,
-        // @InjectModel(Role) private roleRepository: typeof Role,
         private roleService: RolesService,
         ) {}
 
@@ -34,7 +33,6 @@ export class AuthService {
         await user.$set('roles', [role.id]);
         user.roles = [role];
         await this.generateToken(user);
-        
         return user; 
     }
 
@@ -62,5 +60,27 @@ export class AuthService {
     async getOneUsersById(id: number) { 
         const users = await this.userRepository.findOne({where: {id}, include: {all: true}});
         return users;
+    }
+
+    async updateUser(editDto: CreateUserDto, id: number) {
+            const candidate = await this.getUserByEmail(editDto.email);
+        // Проверка, чтобы меняемый email не совпадал с email уже существующих пользователей,
+        // то есть этот email может быть только у редактируемого пользователя
+        if(candidate && candidate.id !== +id) {
+            throw new RpcException('Пользователь с таким email существует');
+        }
+        const user = await this.userRepository.findByPk(id);
+        const hashPassword = await bcrypt.hash(editDto.password, 5);
+        await user.update({...editDto, password: hashPassword});
+        return user;
+    }
+
+    async removeUser(id: number) {
+        const user = await this.userRepository.findByPk(id);
+        if(!user) {
+            throw new RpcException('Указанный пользователь не существует');
+        }
+        await user.destroy();
+        return user;
     }
 }

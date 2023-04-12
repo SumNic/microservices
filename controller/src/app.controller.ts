@@ -1,13 +1,14 @@
-import { Body, Controller, Get, Inject, Param, Post, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Inject, Param, Post, Put, Req, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import { ClientProxy, Ctx, RmqContext } from '@nestjs/microservices';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Observable } from 'rxjs';
 import { AppService } from './app.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { RolesGuard } from 'src/roles.guard';
 import { Roles } from './roles-auth.decorator';
 
+@ApiTags('Общий')
 @Controller('user')
 export class AppController {
   constructor(private readonly appService: AppService,
@@ -43,47 +44,49 @@ export class AppController {
   @UseGuards(JwtAuthGuard)
   @Get()
   getAll() {
-      // return this.profileService.getAllUsers();
-      return this.client.send('getOneUser', id);
+      const get = 1;
+      return this.client.send('getAllUsers', get);
   }
 
-    // @ApiOperation({summary: 'Редактирование профиля пользователя (для админа)'})
-    // @ApiResponse({status: 200, type: User})
-    // @Roles('ADMIN')
-    // @UseGuards(RolesGuard)
-    // @Put('/update/:id')
-    // @UseInterceptors(FileInterceptor('image'))
-    // update(@Param('id') id: number, @Body() editDto: CreateProfileDto) {
-    //     return this.profileService.updateUser(id, editDto);
-    // }
+  @ApiOperation({summary: 'Редактирование профиля пользователя (для админа)'})
+  @ApiResponse({status: 200})
+  @Roles('ADMIN')
+  @UseGuards(RolesGuard)
+  @Put('/update/:id')
+  @UseInterceptors(FileInterceptor('image'))
+  update(@Param('id') id: number, @Body() editDto) {
+    return this.client.send('updateUser', {...editDto, id});
+  }
 
-    // @ApiOperation({summary: 'Редактирование своего профиля (для пользователя)'})
-    // @ApiResponse({status: 200, type: User})
-    // @UseGuards(JwtAuthGuard)
-    // @Put('/update')
-    // @UseInterceptors(FileInterceptor('image'))
-    // updateSelf(@Req() req: any, @Body() editDto: CreateProfileDto) {
-    //     return this.profileService.updateOneUser(req, editDto);
-    // }
+  @ApiOperation({summary: 'Редактирование своего профиля (для пользователя)'})
+  @ApiResponse({status: 200})
+  @UseGuards(JwtAuthGuard)
+  @Put('/update')
+  @UseInterceptors(FileInterceptor('image'))
+  updateSelf(@Req() req: any, @Body() editDto) {
+    const id = req.user.id;
+      return this.client.send('updateUser', {...editDto, id});
+  }
 
-    // @ApiOperation({summary: 'Удаление пользователя (для админа)'})
-    // @ApiResponse({status: 200, description: 'Пользователь успешно удален!'})
-    // @Roles('ADMIN')
-    // @UseGuards(RolesGuard)
-    // @Delete('/delete/:id')
-    // @UseInterceptors(FileInterceptor('image'))
-    // remove(@Param('id') id: number) {
-    // return this.profileService.removeUser(+id);
-    // }
+  @ApiOperation({summary: 'Удаление пользователя (для админа)'})
+  @ApiResponse({status: 200})
+  @Roles('ADMIN')
+  @UseGuards(RolesGuard)
+  @Delete('/delete/:id')
+  @UseInterceptors(FileInterceptor('image'))
+  remove(@Param('id') id: number) {
+  return this.client.send('remove', +id);
+  }
 
-    // @ApiOperation({summary: 'Удаление своего профиля (для пользователя)'})
-    // @ApiResponse({status: 200, description: 'Ваша станица удалена!'})
-    // @UseGuards(JwtAuthGuard)
-    // @Delete('/delete')
-    // @UseInterceptors(FileInterceptor('image'))
-    // removeSelf(@Req() req: any) {
-    // return this.profileService.removeOneUser(req);
-    // }
+  @ApiOperation({summary: 'Удаление своего профиля (для пользователя)'})
+  @ApiResponse({status: 200})
+  @UseGuards(JwtAuthGuard)
+  @Delete('/delete')
+  @UseInterceptors(FileInterceptor('image'))
+  removeSelf(@Req() req: any) {
+    const id = req.user.id;
+      return this.client.send('remove', id);
+  }
 
   @Roles('ADMIN')
   @UseGuards(RolesGuard)

@@ -11,9 +11,6 @@ import * as path from 'path';
     ConfigModule.forRoot({
       envFilePath: process.cwd() + `/.${process.env.NODE_ENV}.env`
     }),
-    // ConfigModule.forRoot({
-    //   envFilePath: `.${process.env.NODE_ENV}.env`
-    // }),
     ServeStaticModule.forRoot({
       rootPath: path.resolve(__dirname, 'static'),
     }),

@@ -1,0 +1,2836 @@
+{
+  "nodes": {
+    "11254965": {
+      "id": "11254965",
+      "label": "RoleRepository",
+      "parent": "774356969",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "RoleRepository"
+      }
+    },
+    "29948139": {
+      "id": "29948139",
+      "label": "Sequelize",
+      "parent": "-470827723",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "Sequelize"
+      }
+    },
+    "81280236": {
+      "id": "81280236",
+      "label": "TextRepository",
+      "parent": "774356970",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "TextRepository"
+      }
+    },
+    "95355232": {
+      "id": "95355232",
+      "label": "JwtModule",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "JwtModule",
+        "initTime": 352.02729299943894
+      }
+    },
+    "196897942": {
+      "id": "196897942",
+      "label": "FilesModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "203550704": {
+      "id": "203550704",
+      "label": "ExternalContextCreator",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "token": "ExternalContextCreator"
+      }
+    },
+    "211572259": {
+      "id": "211572259",
+      "label": "ConfigHostModule",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "225063248": {
+      "id": "225063248",
+      "label": "InternalCoreModule",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "InternalCoreModule",
+        "initTime": 363.08208000008017
+      }
+    },
+    "226309026": {
+      "id": "226309026",
+      "label": "TextController",
+      "parent": "-1277360442",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "TextModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "TextController",
+        "enhancers": [
+          {
+            "id": "1791335969",
+            "methodKey": "createText",
+            "subtype": "guard"
+          },
+          {
+            "id": "1791335969",
+            "methodKey": "updateText",
+            "subtype": "guard"
+          },
+          {
+            "id": "1791335969",
+            "methodKey": "deleteText",
+            "subtype": "guard"
+          },
+          {
+            "id": "-2138949405",
+            "methodKey": "createText",
+            "subtype": "interceptor"
+          },
+          {
+            "id": "1035262549",
+            "methodKey": "updateText",
+            "subtype": "interceptor"
+          },
+          {
+            "id": "-737013646",
+            "methodKey": "deleteText",
+            "subtype": "interceptor"
+          }
+        ]
+      }
+    },
+    "231559216": {
+      "id": "231559216",
+      "label": "ProfileRepository",
+      "parent": "774356968",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ProfileRepository"
+      }
+    },
+    "289005463": {
+      "id": "289005463",
+      "label": "ApplicationConfig",
+      "parent": "-1070762916",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RolesModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "303302557": {
+      "id": "303302557",
+      "label": "ModuleRef",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "313999010": {
+      "id": "313999010",
+      "label": "ModuleRef",
+      "parent": "-1070762916",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RolesModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "350200846": {
+      "id": "350200846",
+      "label": "UserRepository",
+      "parent": "774356968",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UserRepository"
+      }
+    },
+    "350824509": {
+      "id": "350824509",
+      "label": "SERVE_STATIC_MODULE_OPTIONS",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SERVE_STATIC_MODULE_OPTIONS"
+      }
+    },
+    "458994800": {
+      "id": "458994800",
+      "label": "FilesController",
+      "parent": "196897942",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "FilesModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "FilesController",
+        "enhancers": [
+          {
+            "id": "-2116024083",
+            "methodKey": "createFile",
+            "subtype": "guard"
+          },
+          {
+            "id": "1841455270",
+            "methodKey": "createFile",
+            "subtype": "interceptor"
+          }
+        ]
+      }
+    },
+    "471169672": {
+      "id": "471169672",
+      "label": "f052224c8f5e6efea7e66",
+      "parent": "-391469688",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "ProfileModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "f052224c8f5e6efea7e66",
+        "subtype": "interceptor"
+      }
+    },
+    "555176277": {
+      "id": "555176277",
+      "label": "InternalCoreModule",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": true,
+        "internal": true
+      }
+    },
+    "654333524": {
+      "id": "654333524",
+      "label": "FilesRepository",
+      "parent": "774356971",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "FilesRepository"
+      }
+    },
+    "667279739": {
+      "id": "667279739",
+      "label": "ModuleRef",
+      "parent": "-470827723",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "670146417": {
+      "id": "670146417",
+      "label": "ApplicationConfig",
+      "parent": "1439910326",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "671882984": {
+      "id": "671882984",
+      "label": "Reflector",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "Reflector",
+        "initTime": 362.7756510004401
+      }
+    },
+    "675884547": {
+      "id": "675884547",
+      "label": "ApplicationConfig",
+      "parent": "-391469688",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ProfileModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "764415053": {
+      "id": "764415053",
+      "label": "RolesGuard",
+      "parent": "-391469688",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "ProfileModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "RolesGuard",
+        "subtype": "guard"
+      }
+    },
+    "774356968": {
+      "id": "774356968",
+      "label": "SequelizeModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "774356969": {
+      "id": "774356969",
+      "label": "SequelizeModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "774356970": {
+      "id": "774356970",
+      "label": "SequelizeModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "774356971": {
+      "id": "774356971",
+      "label": "SequelizeModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "791068016": {
+      "id": "791068016",
+      "label": "ApplicationConfig",
+      "parent": "-470827723",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "805229344": {
+      "id": "805229344",
+      "label": "ServeStaticModule",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ServeStaticModule"
+      }
+    },
+    "915774976": {
+      "id": "915774976",
+      "label": "ApplicationConfig",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "930519593": {
+      "id": "930519593",
+      "label": "ConfigService",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "Symbol(CONFIG_SERVICE)"
+      }
+    },
+    "937587808": {
+      "id": "937587808",
+      "label": "RolesModule",
+      "parent": "-1070762916",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RolesModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "RolesModule",
+        "initTime": 352.61789599992335
+      }
+    },
+    "1035262549": {
+      "id": "1035262549",
+      "label": "2224c8f5e6efea7e66d71",
+      "parent": "-1277360442",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "TextModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "2224c8f5e6efea7e66d71",
+        "subtype": "interceptor"
+      }
+    },
+    "1063746662": {
+      "id": "1063746662",
+      "label": "CONFIGURATION_TOKEN",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CONFIGURATION_TOKEN",
+        "initTime": 355.5361319994554
+      }
+    },
+    "1070370213": {
+      "id": "1070370213",
+      "label": "JwtService",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "JwtService",
+        "initTime": 353.61703300010413
+      }
+    },
+    "1206855554": {
+      "id": "1206855554",
+      "label": "ModuleRef",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "1264538016": {
+      "id": "1264538016",
+      "label": "SequelizeModule",
+      "parent": "1439910326",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SequelizeModule",
+        "initTime": 355.26262999977916
+      }
+    },
+    "1322915267": {
+      "id": "1322915267",
+      "label": "RoleRepository",
+      "parent": "774356968",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "RoleRepository"
+      }
+    },
+    "1399708608": {
+      "id": "1399708608",
+      "label": "ModuleRef",
+      "parent": "-1277360442",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TextModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "1434456218": {
+      "id": "1434456218",
+      "label": "Reflector",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "token": "Reflector"
+      }
+    },
+    "1439910326": {
+      "id": "1439910326",
+      "label": "SequelizeModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "1535566912": {
+      "id": "1535566912",
+      "label": "UserRepository",
+      "parent": "774356969",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UserRepository"
+      }
+    },
+    "1535566913": {
+      "id": "1535566913",
+      "label": "UserRepository",
+      "parent": "774356970",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UserRepository"
+      }
+    },
+    "1542581243": {
+      "id": "1542581243",
+      "label": "ModuleRef",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "1556666321": {
+      "id": "1556666321",
+      "label": "ApplicationConfig",
+      "parent": "196897942",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "FilesModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1581416700": {
+      "id": "1581416700",
+      "label": "ModuleRef",
+      "parent": "1439910326",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "1581659868": {
+      "id": "1581659868",
+      "label": "ModuleRef",
+      "parent": "196897942",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "FilesModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "1649441975": {
+      "id": "1649441975",
+      "label": "ApplicationConfig",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1672897728": {
+      "id": "1672897728",
+      "label": "SequelizeCoreModule",
+      "parent": "-470827723",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SequelizeCoreModule",
+        "initTime": 356.651936000213
+      }
+    },
+    "1683523615": {
+      "id": "1683523615",
+      "label": "JwtAuthGuard",
+      "parent": "-391469688",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "ProfileModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "JwtAuthGuard",
+        "subtype": "guard"
+      }
+    },
+    "1690574933": {
+      "id": "1690574933",
+      "label": "ModuleRef",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "1712628187": {
+      "id": "1712628187",
+      "label": "ConfigModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "1712941473": {
+      "id": "1712941473",
+      "label": "ApplicationConfig",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1769319388": {
+      "id": "1769319388",
+      "label": "ConfigModule",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ConfigModule",
+        "initTime": 360.862779000774
+      }
+    },
+    "1787828844": {
+      "id": "1787828844",
+      "label": "ConfigHostModule",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ConfigHostModule",
+        "initTime": 355.56126299966127
+      }
+    },
+    "1791335969": {
+      "id": "1791335969",
+      "label": "RolesGuard",
+      "parent": "-1277360442",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "TextModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "RolesGuard",
+        "subtype": "guard"
+      }
+    },
+    "1841455270": {
+      "id": "1841455270",
+      "label": "24c8f5e6efea7e66d71cd",
+      "parent": "196897942",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "FilesModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "24c8f5e6efea7e66d71cd",
+        "subtype": "interceptor"
+      }
+    },
+    "1919157847": {
+      "id": "1919157847",
+      "label": "REQUEST",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": false,
+        "scope": 2,
+        "transient": false,
+        "exported": true,
+        "token": "REQUEST",
+        "initTime": 352.3352040005848
+      }
+    },
+    "2118694856": {
+      "id": "2118694856",
+      "label": "ApplicationConfig",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-1486320561": {
+      "id": "-1486320561",
+      "label": "ModuleRef",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-651043398": {
+      "id": "-651043398",
+      "label": "ApplicationConfig",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-255469305": {
+      "id": "-255469305",
+      "label": "INQUIRER",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 1,
+        "transient": true,
+        "exported": true,
+        "token": "INQUIRER",
+        "initTime": 352.3305289996788
+      }
+    },
+    "-26938366": {
+      "id": "-26938366",
+      "label": "ModulesContainer",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "token": "ModulesContainer"
+      }
+    },
+    "-326832201": {
+      "id": "-326832201",
+      "label": "HttpAdapterHost",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "token": "HttpAdapterHost"
+      }
+    },
+    "-553129559": {
+      "id": "-553129559",
+      "label": "HttpAdapterHost",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "token": "HttpAdapterHost",
+        "initTime": 363.3456509998068
+      }
+    },
+    "-702581189": {
+      "id": "-702581189",
+      "label": "LazyModuleLoader",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "LazyModuleLoader",
+        "initTime": 361.28766200039536
+      }
+    },
+    "-1904419534": {
+      "id": "-1904419534",
+      "label": "SerializedGraph",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "token": "SerializedGraph"
+      }
+    },
+    "-19112576": {
+      "id": "-19112576",
+      "label": "AppModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-2139588960": {
+      "id": "-2139588960",
+      "label": "AppModule",
+      "parent": "-19112576",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AppModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "AppModule",
+        "initTime": 361.2483230000362
+      }
+    },
+    "-71302842": {
+      "id": "-71302842",
+      "label": "ModuleRef",
+      "parent": "-19112576",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AppModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-2064622725": {
+      "id": "-2064622725",
+      "label": "ApplicationConfig",
+      "parent": "-19112576",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AppModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-503631789": {
+      "id": "-503631789",
+      "label": "ConfigService",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ConfigService"
+      }
+    },
+    "-1636783684": {
+      "id": "-1636783684",
+      "label": "ServeStaticModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "-1088720716": {
+      "id": "-1088720716",
+      "label": "AbstractLoader",
+      "parent": "-1636783684",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ServeStaticModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "AbstractLoader",
+        "initTime": 357.74778899922967
+      }
+    },
+    "-470827723": {
+      "id": "-470827723",
+      "label": "SequelizeCoreModule",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "-334100345": {
+      "id": "-334100345",
+      "label": "SequelizeModuleOptions",
+      "parent": "-470827723",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SequelizeModuleOptions"
+      }
+    },
+    "-391469688": {
+      "id": "-391469688",
+      "label": "ProfileModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1027698144": {
+      "id": "-1027698144",
+      "label": "ProfileModule",
+      "parent": "-391469688",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ProfileModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ProfileModule",
+        "initTime": 354.8064860003069
+      }
+    },
+    "-1075120562": {
+      "id": "-1075120562",
+      "label": "ModuleRef",
+      "parent": "-391469688",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ProfileModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-654612503": {
+      "id": "-654612503",
+      "label": "ProfileService",
+      "parent": "-391469688",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ProfileModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ProfileService"
+      }
+    },
+    "-1326687816": {
+      "id": "-1326687816",
+      "label": "052224c8f5e6efea7e66d",
+      "parent": "-391469688",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "ProfileModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "052224c8f5e6efea7e66d",
+        "subtype": "interceptor"
+      }
+    },
+    "-564654224": {
+      "id": "-564654224",
+      "label": "ProfileController",
+      "parent": "-391469688",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "ProfileModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ProfileController",
+        "enhancers": [
+          {
+            "id": "764415053",
+            "methodKey": "getAll",
+            "subtype": "guard"
+          },
+          {
+            "id": "764415053",
+            "methodKey": "update",
+            "subtype": "guard"
+          },
+          {
+            "id": "1683523615",
+            "methodKey": "updateSelf",
+            "subtype": "guard"
+          },
+          {
+            "id": "764415053",
+            "methodKey": "remove",
+            "subtype": "guard"
+          },
+          {
+            "id": "1683523615",
+            "methodKey": "removeSelf",
+            "subtype": "guard"
+          },
+          {
+            "id": "471169672",
+            "methodKey": "registration",
+            "subtype": "interceptor"
+          },
+          {
+            "id": "-1326687816",
+            "methodKey": "login",
+            "subtype": "interceptor"
+          }
+        ]
+      }
+    },
+    "-254708398": {
+      "id": "-254708398",
+      "label": "SequelizeModule",
+      "parent": "774356968",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SequelizeModule",
+        "initTime": 352.9958759993315
+      }
+    },
+    "-676971090": {
+      "id": "-676971090",
+      "label": "ModuleRef",
+      "parent": "774356968",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-234384669": {
+      "id": "-234384669",
+      "label": "ApplicationConfig",
+      "parent": "774356968",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-929700793": {
+      "id": "-929700793",
+      "label": "UserRolesRepository",
+      "parent": "774356968",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UserRolesRepository"
+      }
+    },
+    "-1070762916": {
+      "id": "-1070762916",
+      "label": "RolesModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-136824047": {
+      "id": "-136824047",
+      "label": "RolesService",
+      "parent": "-1070762916",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "RolesModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "RolesService"
+      }
+    },
+    "-14782544": {
+      "id": "-14782544",
+      "label": "RolesController",
+      "parent": "-1070762916",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "RolesModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "RolesController"
+      }
+    },
+    "-254708397": {
+      "id": "-254708397",
+      "label": "SequelizeModule",
+      "parent": "774356969",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SequelizeModule",
+        "initTime": 352.2322300001979
+      }
+    },
+    "-676971089": {
+      "id": "-676971089",
+      "label": "ModuleRef",
+      "parent": "774356969",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-234384668": {
+      "id": "-234384668",
+      "label": "ApplicationConfig",
+      "parent": "774356969",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-89261511": {
+      "id": "-89261511",
+      "label": "UserRolesRepository",
+      "parent": "774356969",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UserRolesRepository"
+      }
+    },
+    "-1134487807": {
+      "id": "-1134487807",
+      "label": "AuthModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1846279256": {
+      "id": "-1846279256",
+      "label": "AuthModule",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "AuthModule",
+        "initTime": 352.1108790002763
+      }
+    },
+    "-120792986": {
+      "id": "-120792986",
+      "label": "ApplicationConfig",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-793915935": {
+      "id": "-793915935",
+      "label": "AuthService",
+      "parent": "-1134487807",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "AuthModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "AuthService"
+      }
+    },
+    "-536515674": {
+      "id": "-536515674",
+      "label": "JwtModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "-588705940": {
+      "id": "-588705940",
+      "label": "ModuleRef",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-1900804336": {
+      "id": "-1900804336",
+      "label": "JWT_MODULE_OPTIONS",
+      "parent": "-536515674",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "JwtModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "JWT_MODULE_OPTIONS"
+      }
+    },
+    "-1277360442": {
+      "id": "-1277360442",
+      "label": "TextModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1173704462": {
+      "id": "-1173704462",
+      "label": "TextModule",
+      "parent": "-1277360442",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TextModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TextModule",
+        "initTime": 351.9567520003766
+      }
+    },
+    "-263665621": {
+      "id": "-263665621",
+      "label": "ApplicationConfig",
+      "parent": "-1277360442",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TextModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-1427722047": {
+      "id": "-1427722047",
+      "label": "TextService",
+      "parent": "-1277360442",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TextModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "TextService"
+      }
+    },
+    "-2138949405": {
+      "id": "-2138949405",
+      "label": "52224c8f5e6efea7e66d7",
+      "parent": "-1277360442",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "TextModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "52224c8f5e6efea7e66d7",
+        "subtype": "interceptor"
+      }
+    },
+    "-737013646": {
+      "id": "-737013646",
+      "label": "224c8f5e6efea7e66d71c",
+      "parent": "-1277360442",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "TextModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "224c8f5e6efea7e66d71c",
+        "subtype": "interceptor"
+      }
+    },
+    "-254708396": {
+      "id": "-254708396",
+      "label": "SequelizeModule",
+      "parent": "774356970",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SequelizeModule",
+        "initTime": 351.8546849992126
+      }
+    },
+    "-676971088": {
+      "id": "-676971088",
+      "label": "ModuleRef",
+      "parent": "774356970",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-234384667": {
+      "id": "-234384667",
+      "label": "ApplicationConfig",
+      "parent": "774356970",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-361329886": {
+      "id": "-361329886",
+      "label": "FilesRepository",
+      "parent": "774356970",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "FilesRepository"
+      }
+    },
+    "-375985120": {
+      "id": "-375985120",
+      "label": "FilesModule",
+      "parent": "196897942",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "FilesModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "FilesModule",
+        "initTime": 351.7765330001712
+      }
+    },
+    "-1577999227": {
+      "id": "-1577999227",
+      "label": "FilesService",
+      "parent": "196897942",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "FilesModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "FilesService"
+      }
+    },
+    "-2116024083": {
+      "id": "-2116024083",
+      "label": "JwtAuthGuard",
+      "parent": "196897942",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "FilesModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "JwtAuthGuard",
+        "subtype": "guard"
+      }
+    },
+    "-254708395": {
+      "id": "-254708395",
+      "label": "SequelizeModule",
+      "parent": "774356971",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SequelizeModule",
+        "initTime": 351.671587000601
+      }
+    },
+    "-676971087": {
+      "id": "-676971087",
+      "label": "ModuleRef",
+      "parent": "774356971",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-234384666": {
+      "id": "-234384666",
+      "label": "ApplicationConfig",
+      "parent": "774356971",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SequelizeModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    }
+  },
+  "edges": {
+    "45522396": {
+      "source": "-564654224",
+      "target": "1683523615",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ProfileModule",
+        "sourceClassName": "ProfileController",
+        "targetClassName": "JwtAuthGuard",
+        "sourceClassToken": "ProfileController",
+        "targetClassToken": "JwtAuthGuard",
+        "targetModuleName": "ProfileModule",
+        "injectionType": "decorator"
+      },
+      "id": "45522396"
+    },
+    "128426668": {
+      "source": "-1277360442",
+      "target": "196897942",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TextModule",
+        "targetModuleName": "FilesModule"
+      },
+      "id": "128426668"
+    },
+    "219775656": {
+      "source": "-19112576",
+      "target": "-1134487807",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "AuthModule"
+      },
+      "id": "219775656"
+    },
+    "226810536": {
+      "source": "-470827723",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeCoreModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "226810536"
+    },
+    "266443401": {
+      "source": "774356969",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "266443401"
+    },
+    "336288415": {
+      "source": "774356971",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "336288415"
+    },
+    "353572985": {
+      "source": "1712628187",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "353572985"
+    },
+    "363047080": {
+      "source": "-564654224",
+      "target": "-1326687816",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ProfileModule",
+        "sourceClassName": "ProfileController",
+        "targetClassName": "052224c8f5e6efea7e66d",
+        "sourceClassToken": "ProfileController",
+        "targetClassToken": "052224c8f5e6efea7e66d",
+        "targetModuleName": "ProfileModule",
+        "injectionType": "decorator"
+      },
+      "id": "363047080"
+    },
+    "382466806": {
+      "source": "774356969",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "382466806"
+    },
+    "440960720": {
+      "source": "-19112576",
+      "target": "-391469688",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "ProfileModule"
+      },
+      "id": "440960720"
+    },
+    "474941978": {
+      "source": "1439910326",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "474941978"
+    },
+    "584653416": {
+      "source": "1712628187",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "584653416"
+    },
+    "609978431": {
+      "source": "774356971",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "609978431"
+    },
+    "682818376": {
+      "source": "-564654224",
+      "target": "471169672",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ProfileModule",
+        "sourceClassName": "ProfileController",
+        "targetClassName": "f052224c8f5e6efea7e66",
+        "sourceClassToken": "ProfileController",
+        "targetClassToken": "f052224c8f5e6efea7e66",
+        "targetModuleName": "ProfileModule",
+        "injectionType": "decorator"
+      },
+      "id": "682818376"
+    },
+    "684555502": {
+      "source": "-1088720716",
+      "target": "-326832201",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ServeStaticModule",
+        "sourceClassName": "AbstractLoader",
+        "targetClassName": "HttpAdapterHost",
+        "sourceClassToken": "AbstractLoader",
+        "targetClassToken": "HttpAdapterHost",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "684555502"
+    },
+    "712066298": {
+      "source": "1439910326",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "712066298"
+    },
+    "716235619": {
+      "source": "196897942",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "FilesModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "716235619"
+    },
+    "784525888": {
+      "source": "-536515674",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "JwtModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "784525888"
+    },
+    "865801558": {
+      "source": "-1277360442",
+      "target": "-1134487807",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TextModule",
+        "targetModuleName": "AuthModule"
+      },
+      "id": "865801558"
+    },
+    "869088563": {
+      "source": "-391469688",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ProfileModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "869088563"
+    },
+    "920687522": {
+      "source": "-1134487807",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AuthModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "920687522"
+    },
+    "966253305": {
+      "source": "-564654224",
+      "target": "764415053",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ProfileModule",
+        "sourceClassName": "ProfileController",
+        "targetClassName": "RolesGuard",
+        "sourceClassToken": "ProfileController",
+        "targetClassToken": "RolesGuard",
+        "targetModuleName": "ProfileModule",
+        "injectionType": "decorator"
+      },
+      "id": "966253305"
+    },
+    "966253306": {
+      "source": "-564654224",
+      "target": "764415053",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ProfileModule",
+        "sourceClassName": "ProfileController",
+        "targetClassName": "RolesGuard",
+        "sourceClassToken": "ProfileController",
+        "targetClassToken": "RolesGuard",
+        "targetModuleName": "ProfileModule",
+        "injectionType": "decorator"
+      },
+      "id": "966253306"
+    },
+    "978356204": {
+      "source": "-1134487807",
+      "target": "-536515674",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AuthModule",
+        "targetModuleName": "JwtModule"
+      },
+      "id": "978356204"
+    },
+    "1056428433": {
+      "source": "-19112576",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1056428433"
+    },
+    "1076471204": {
+      "source": "458994800",
+      "target": "-2116024083",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "FilesModule",
+        "sourceClassName": "FilesController",
+        "targetClassName": "JwtAuthGuard",
+        "sourceClassToken": "FilesController",
+        "targetClassToken": "JwtAuthGuard",
+        "targetModuleName": "FilesModule",
+        "injectionType": "decorator"
+      },
+      "id": "1076471204"
+    },
+    "1134336077": {
+      "source": "-536515674",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "JwtModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1134336077"
+    },
+    "1154747330": {
+      "source": "-391469688",
+      "target": "774356968",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ProfileModule",
+        "targetModuleName": "SequelizeModule"
+      },
+      "id": "1154747330"
+    },
+    "1175183130": {
+      "source": "1070370213",
+      "target": "-1900804336",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "JwtModule",
+        "sourceClassName": "JwtService",
+        "targetClassName": "JWT_MODULE_OPTIONS",
+        "sourceClassToken": "JwtService",
+        "targetClassToken": "JWT_MODULE_OPTIONS",
+        "targetModuleName": "JwtModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "1175183130"
+    },
+    "1206282646": {
+      "source": "226309026",
+      "target": "1791335969",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TextModule",
+        "sourceClassName": "TextController",
+        "targetClassName": "RolesGuard",
+        "sourceClassToken": "TextController",
+        "targetClassToken": "RolesGuard",
+        "targetModuleName": "TextModule",
+        "injectionType": "decorator"
+      },
+      "id": "1206282646"
+    },
+    "1254198917": {
+      "source": "-19112576",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "1254198917"
+    },
+    "1307270001": {
+      "source": "-1277360442",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TextModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "1307270001"
+    },
+    "1391257638": {
+      "source": "-391469688",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ProfileModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1391257638"
+    },
+    "1403154276": {
+      "source": "-19112576",
+      "target": "-1636783684",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "ServeStaticModule"
+      },
+      "id": "1403154276"
+    },
+    "1415383010": {
+      "source": "226309026",
+      "target": "-737013646",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TextModule",
+        "sourceClassName": "TextController",
+        "targetClassName": "224c8f5e6efea7e66d71c",
+        "sourceClassToken": "TextController",
+        "targetClassToken": "224c8f5e6efea7e66d71c",
+        "targetModuleName": "TextModule",
+        "injectionType": "decorator"
+      },
+      "id": "1415383010"
+    },
+    "1434114587": {
+      "source": "-470827723",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeCoreModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1434114587"
+    },
+    "1453622925": {
+      "source": "1439910326",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1453622925"
+    },
+    "1550801086": {
+      "source": "1712628187",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "1550801086"
+    },
+    "1604644728": {
+      "source": "226309026",
+      "target": "1035262549",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TextModule",
+        "sourceClassName": "TextController",
+        "targetClassName": "2224c8f5e6efea7e66d71",
+        "sourceClassToken": "TextController",
+        "targetClassToken": "2224c8f5e6efea7e66d71",
+        "targetModuleName": "TextModule",
+        "injectionType": "decorator"
+      },
+      "id": "1604644728"
+    },
+    "1865287036": {
+      "source": "-1070762916",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RolesModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1865287036"
+    },
+    "1982615156": {
+      "source": "458994800",
+      "target": "1841455270",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "FilesModule",
+        "sourceClassName": "FilesController",
+        "targetClassName": "24c8f5e6efea7e66d71cd",
+        "sourceClassToken": "FilesController",
+        "targetClassToken": "24c8f5e6efea7e66d71cd",
+        "targetModuleName": "FilesModule",
+        "injectionType": "decorator"
+      },
+      "id": "1982615156"
+    },
+    "2001975162": {
+      "source": "196897942",
+      "target": "774356971",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "FilesModule",
+        "targetModuleName": "SequelizeModule"
+      },
+      "id": "2001975162"
+    },
+    "2006293380": {
+      "source": "1672897728",
+      "target": "-334100345",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "SequelizeCoreModule",
+        "sourceClassName": "SequelizeCoreModule",
+        "targetClassName": "SequelizeModuleOptions",
+        "sourceClassToken": "SequelizeCoreModule",
+        "targetClassToken": "SequelizeModuleOptions",
+        "targetModuleName": "SequelizeCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "2006293380"
+    },
+    "2056720150": {
+      "source": "774356969",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "2056720150"
+    },
+    "-844262897": {
+      "source": "-19112576",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-844262897"
+    },
+    "-1948157513": {
+      "source": "-19112576",
+      "target": "1439910326",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "SequelizeModule"
+      },
+      "id": "-1948157513"
+    },
+    "-1877978967": {
+      "source": "-19112576",
+      "target": "-1070762916",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "RolesModule"
+      },
+      "id": "-1877978967"
+    },
+    "-1584571588": {
+      "source": "-19112576",
+      "target": "-1277360442",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "TextModule"
+      },
+      "id": "-1584571588"
+    },
+    "-979345840": {
+      "source": "-19112576",
+      "target": "196897942",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "FilesModule"
+      },
+      "id": "-979345840"
+    },
+    "-815553404": {
+      "source": "-19112576",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-815553404"
+    },
+    "-1995183955": {
+      "source": "211572259",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1995183955"
+    },
+    "-127476141": {
+      "source": "211572259",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "-127476141"
+    },
+    "-1269640393": {
+      "source": "-1636783684",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ServeStaticModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1269640393"
+    },
+    "-1340488022": {
+      "source": "-1636783684",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ServeStaticModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1340488022"
+    },
+    "-1731452509": {
+      "source": "-1636783684",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ServeStaticModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "-1731452509"
+    },
+    "-395112889": {
+      "source": "-391469688",
+      "target": "-1070762916",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ProfileModule",
+        "targetModuleName": "RolesModule"
+      },
+      "id": "-395112889"
+    },
+    "-412699574": {
+      "source": "-391469688",
+      "target": "-1134487807",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ProfileModule",
+        "targetModuleName": "AuthModule"
+      },
+      "id": "-412699574"
+    },
+    "-2043968585": {
+      "source": "-391469688",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ProfileModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "-2043968585"
+    },
+    "-296068681": {
+      "source": "774356968",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-296068681"
+    },
+    "-813098646": {
+      "source": "774356968",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-813098646"
+    },
+    "-1494802089": {
+      "source": "774356968",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "-1494802089"
+    },
+    "-911036168": {
+      "source": "-1070762916",
+      "target": "774356969",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RolesModule",
+        "targetModuleName": "SequelizeModule"
+      },
+      "id": "-911036168"
+    },
+    "-1594000657": {
+      "source": "-1070762916",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RolesModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1594000657"
+    },
+    "-1975690392": {
+      "source": "-1070762916",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RolesModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "-1975690392"
+    },
+    "-1452260286": {
+      "source": "-1134487807",
+      "target": "-391469688",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AuthModule",
+        "targetModuleName": "ProfileModule"
+      },
+      "id": "-1452260286"
+    },
+    "-1377619055": {
+      "source": "-1134487807",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AuthModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1377619055"
+    },
+    "-1195128653": {
+      "source": "-1134487807",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AuthModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "-1195128653"
+    },
+    "-2138846259": {
+      "source": "-536515674",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "JwtModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "-2138846259"
+    },
+    "-1436299025": {
+      "source": "-1277360442",
+      "target": "774356970",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TextModule",
+        "targetModuleName": "SequelizeModule"
+      },
+      "id": "-1436299025"
+    },
+    "-517817499": {
+      "source": "-1277360442",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TextModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-517817499"
+    },
+    "-1505230730": {
+      "source": "-1277360442",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TextModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1505230730"
+    },
+    "-2016500416": {
+      "source": "774356970",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-2016500416"
+    },
+    "-1753435341": {
+      "source": "774356970",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1753435341"
+    },
+    "-1267290464": {
+      "source": "774356970",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "-1267290464"
+    },
+    "-489494598": {
+      "source": "196897942",
+      "target": "-1134487807",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "FilesModule",
+        "targetModuleName": "AuthModule"
+      },
+      "id": "-489494598"
+    },
+    "-2019776874": {
+      "source": "196897942",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "FilesModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-2019776874"
+    },
+    "-361937213": {
+      "source": "196897942",
+      "target": "-470827723",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "FilesModule",
+        "targetModuleName": "SequelizeCoreModule"
+      },
+      "id": "-361937213"
+    },
+    "-673893294": {
+      "source": "774356971",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SequelizeModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-673893294"
+    },
+    "-1241451257": {
+      "source": "-564654224",
+      "target": "764415053",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ProfileModule",
+        "sourceClassName": "ProfileController",
+        "targetClassName": "RolesGuard",
+        "sourceClassToken": "ProfileController",
+        "targetClassToken": "RolesGuard",
+        "targetModuleName": "ProfileModule",
+        "injectionType": "decorator"
+      },
+      "id": "-1241451257"
+    },
+    "-2002185046": {
+      "source": "-564654224",
+      "target": "1683523615",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ProfileModule",
+        "sourceClassName": "ProfileController",
+        "targetClassName": "JwtAuthGuard",
+        "sourceClassToken": "ProfileController",
+        "targetClassToken": "JwtAuthGuard",
+        "targetModuleName": "ProfileModule",
+        "injectionType": "decorator"
+      },
+      "id": "-2002185046"
+    },
+    "-403544120": {
+      "source": "226309026",
+      "target": "1791335969",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TextModule",
+        "sourceClassName": "TextController",
+        "targetClassName": "RolesGuard",
+        "sourceClassToken": "TextController",
+        "targetClassToken": "RolesGuard",
+        "targetModuleName": "TextModule",
+        "injectionType": "decorator"
+      },
+      "id": "-403544120"
+    },
+    "-403544119": {
+      "source": "226309026",
+      "target": "1791335969",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TextModule",
+        "sourceClassName": "TextController",
+        "targetClassName": "RolesGuard",
+        "sourceClassToken": "TextController",
+        "targetClassToken": "RolesGuard",
+        "targetModuleName": "TextModule",
+        "injectionType": "decorator"
+      },
+      "id": "-403544119"
+    },
+    "-433253893": {
+      "source": "226309026",
+      "target": "-2138949405",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "TextModule",
+        "sourceClassName": "TextController",
+        "targetClassName": "52224c8f5e6efea7e66d7",
+        "sourceClassToken": "TextController",
+        "targetClassToken": "52224c8f5e6efea7e66d7",
+        "targetModuleName": "TextModule",
+        "injectionType": "decorator"
+      },
+      "id": "-433253893"
+    },
+    "-1759625292": {
+      "source": "-553129559",
+      "target": "-326832201",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "InternalCoreModule",
+        "sourceClassName": "HttpAdapterHost",
+        "targetClassName": "HttpAdapterHost",
+        "sourceClassToken": "HttpAdapterHost",
+        "targetClassToken": "HttpAdapterHost",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-1759625292"
+    },
+    "-1906683315": {
+      "source": "1672897728",
+      "target": "667279739",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "SequelizeCoreModule",
+        "sourceClassName": "SequelizeCoreModule",
+        "targetClassName": "ModuleRef",
+        "sourceClassToken": "SequelizeCoreModule",
+        "targetClassToken": "ModuleRef",
+        "targetModuleName": "SequelizeCoreModule",
+        "keyOrIndex": 1,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-1906683315"
+    }
+  },
+  "entrypoints": {},
+  "extras": {
+    "orphanedEnhancers": [],
+    "attachedEnhancers": []
+  },
+  "status": "partial",
+  "metadata": {
+    "cause": {
+      "type": "unknown-dependencies",
+      "context": {
+        "index": 1,
+        "dependencies": [
+          "ProfileRepository",
+          "ProfileService",
+          "UserRepository",
+          "RolesService",
+          "FilesRepository",
+          "FilesService"
+        ],
+        "name": "ProfileService"
+      },
+      "moduleId": "-391469688",
+      "nodeId": "-654612503"
+    }
+  }
+}

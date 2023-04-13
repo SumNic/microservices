@@ -1,4 +1,4 @@
-import { Controller, Inject, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Controller, HttpException, HttpStatus, Inject, UseGuards, UseInterceptors } from '@nestjs/common';
 import { ClientProxy, Ctx, EventPattern, MessagePattern, Payload, RmqContext, RpcException } from '@nestjs/microservices';
 import { from, Observable } from 'rxjs';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -17,7 +17,7 @@ export class AuthController {
         ) {}
 
     @MessagePattern('registration')
-    async handleUserCreated(@Payload() dto: CreateUserDto): Promise<CreateUserDto> {
+    async handleUserCreated(@Payload() dto: CreateUserDto): Promise<CreateUserDto | any> {
         const user = this.authService.registration(dto);
         const userId =(await user).id
         this.client.emit('profile', {...dto, userId: userId});

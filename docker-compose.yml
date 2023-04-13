@@ -1,0 +1,75 @@
+version: '3.0'
+
+services:
+  controller:
+    container_name: controller
+    build:
+      context: ./controller
+    env_file:
+      - ./controller/.development.env
+    volumes:
+      - ./controller:/app
+      - /app/node_modules
+    ports:
+    - 7000:7000
+    - 9229:9229
+    command: npm run start:dev
+    restart: always
+  profile:
+    container_name: profile
+    build:
+      context: ./profile_microservice
+    env_file:
+      - ./profile_microservice/.development.env
+    volumes:
+      - ./profile_microservice:/app
+      - /app/node_modules
+    ports:
+    - 5000:5000
+    - 9229:9229
+    command: npm run start:dev
+    depends_on:
+      - postgres
+      - rabbitmq
+    restart: always
+  auht:
+    container_name: user
+    build:
+      context: ./user_microservice
+    env_file:
+      - ./user_microservice/.development.env
+    volumes:
+      - ./user_microservice:/app
+      - /app/node_modules
+    command: npm run start:dev
+    depends_on:
+      - postgres
+      - rabbitmq
+    restart: always
+  postgres:
+    container_name: postgres
+    image: postgres:14
+    env_file:
+    - ./profile_microservice/.development.env
+    - ./user_microservice/.development.env
+    environment:
+      PG_DATA: /var/lib/postgresql/data
+    ports:
+    - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    restart: always
+    volumes:
+      - ./rabbitmq:/var/lib/rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+
+volumes:
+  pgdata:
+  rabbitmq:

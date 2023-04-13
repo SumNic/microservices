@@ -8,8 +8,8 @@ RUN npm install
 
 COPY . .
 
-COPY ./dist ./dist
+# COPY ./dist ./dist
 
-EXPOSE 5000
+# EXPOSE 5000
 
 CMD ["npm", "run", "start:dev"]

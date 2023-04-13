@@ -32,7 +32,7 @@ services:
       - postgres
       - rabbitmq
     restart: always
-  auht:
+  user:
     container_name: user
     build:
       context: ./user_microservice

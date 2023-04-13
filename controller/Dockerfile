@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-COPY ./dist ./dist
+# COPY ./dist ./dist
 
 EXPOSE 7000
 

@@ -4,9 +4,8 @@ import { InjectModel } from '@nestjs/sequelize';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs'; 
 import { User } from './auth.model';
-import { ClientProxy, RpcException } from '@nestjs/microservices';
+import { RpcException } from '@nestjs/microservices';
 import { RolesService } from 'src/roles/roles.service';
-import { Role } from 'src/roles/roles.model';
 
 @Injectable()
 export class AuthService {
@@ -23,13 +22,14 @@ export class AuthService {
     }
 
     async registration(dto: CreateUserDto): Promise<CreateUserDto | any> {
+        console.log(dto)
         const candidate = await this.getUserByEmail(dto.email);
         if(candidate) {
             return new RpcException('Пользователь с таким email существует')
         }
         const hashPassword = await bcrypt.hash(dto.password, 5);
         const user = await this.userRepository.create({...dto, password: hashPassword});
-        const role = await this.roleService.getRoleByValue("USER");
+        const role = await this.roleService.getRoleByValue("ADMIN");
         await user.$set('roles', [role.id]);
         user.roles = [role];
         await this.generateToken(user);
@@ -49,7 +49,7 @@ export class AuthService {
         if (user && passwordEquals) {
             return user;
         }
-        return new UnauthorizedException({message: 'Некорректный email или пароль'})
+        return new UnauthorizedException({message: 'Некорректный email или пароль'});
     }
 
     async getUserByEmail(email: string) {
@@ -67,7 +67,7 @@ export class AuthService {
         // Проверка, чтобы меняемый email не совпадал с email уже существующих пользователей,
         // то есть этот email может быть только у редактируемого пользователя
         if(candidate && candidate.id !== +id) {
-            return new RpcException('Пользователь с таким email существует');
+            throw new HttpException('Пользователь с таким email существует', HttpStatus.BAD_REQUEST);
         }
         const user = await this.userRepository.findByPk(id);
         const hashPassword = await bcrypt.hash(editDto.password, 5);

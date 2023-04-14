@@ -1,4 +1,4 @@
-import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from "@nestjs/common";
+import { CanActivate, ExecutionContext, HttpException, HttpStatus, Injectable, UnauthorizedException } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { JwtService } from "@nestjs/jwt";
 import { RpcException } from "@nestjs/microservices";
@@ -35,7 +35,7 @@ export class RolesGuard implements CanActivate {
             }
             return true;
         } catch (e) {
-            throw new RpcException('Нет доступа')
+            throw new HttpException('Нет доступа', HttpStatus.BAD_REQUEST)
         }
     }
     

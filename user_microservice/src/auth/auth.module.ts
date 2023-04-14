@@ -6,7 +6,6 @@ import { User } from './auth.model';
 import { AuthController } from './auth.controller';
 import { ConfigModule } from '@nestjs/config';
 import { ClientsModule, Transport } from '@nestjs/microservices';
-import { RolesService } from 'src/roles/roles.service';
 import { RolesModule } from 'src/roles/roles.module';
 import { Role } from 'src/roles/roles.model';
 import { UserRoles } from 'src/roles/user-roles.model';
@@ -38,7 +37,6 @@ import { UserRoles } from 'src/roles/user-roles.model';
         expiresIn: '24h'
       }
     }),
-    // RolesModule
   ],
   
   exports: [

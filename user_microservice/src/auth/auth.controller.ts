@@ -1,12 +1,7 @@
-import { Controller, HttpException, HttpStatus, Inject, UseGuards, UseInterceptors } from '@nestjs/common';
-import { ClientProxy, Ctx, EventPattern, MessagePattern, Payload, RmqContext, RpcException } from '@nestjs/microservices';
-import { from, Observable } from 'rxjs';
+import { Controller, Inject, } from '@nestjs/common';
+import { ClientProxy, MessagePattern, Payload, RpcException } from '@nestjs/microservices';
 import { CreateUserDto } from './dto/create-user.dto';
 import { AuthService } from './auth.service';
-import { JwtAuthGuard } from './jwt-auth.guard';
-import { User } from './auth.model';
-import { FileInterceptor } from '@nestjs/platform-express';
-
 
 @Controller()
 export class AuthController {
@@ -19,8 +14,6 @@ export class AuthController {
     @MessagePattern('registration')
     async handleUserCreated(@Payload() dto: CreateUserDto) {
         const user = this.authService.registration(dto);
-        // return req
-        // return new RpcException('Пользователь с таким email существует')
         const userId =(await user).id
         this.client.emit('profile', {...dto, userId: userId});
         return user;
@@ -46,7 +39,7 @@ export class AuthController {
     async updateUser(@Payload() editDto: CreateUserDto, @Payload('id') id: number): Promise<any> {
         const user = this.authService.updateUser(editDto, id);
         if(!user) {
-            throw new RpcException('Произошла ошибка при редактировании профиля');
+            return new RpcException('Произошла ошибка при редактировании профиля');
         }
         const profile = this.client.send('updateUser', editDto);
         return profile;
@@ -56,7 +49,7 @@ export class AuthController {
     async remove(@Payload() id: number): Promise<any> {
         const user = this.authService.removeUser(id);
         if(!user) {
-            throw new RpcException('Произошла ошибка при редактировании профиля');
+            return new RpcException('Произошла ошибка при редактировании профиля');
         }
         const profile = this.client.send('remove', id);
         return profile;

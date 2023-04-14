@@ -3,16 +3,14 @@ import { ClientProxy, Ctx, RmqContext } from '@nestjs/microservices';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Observable } from 'rxjs';
-import { AppService } from './app.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
-import { RolesGuard } from 'src/roles.guard';
+import { RolesGuard } from './roles.guard';
 import { Roles } from './roles-auth.decorator';
 
 @ApiTags('Общий')
 @Controller('user')
 export class AppController {
-  constructor(private readonly appService: AppService,
-    @Inject('CONTROLLER_SERVICE') private client: ClientProxy) {}
+  constructor(@Inject('CONTROLLER_SERVICE') private client: ClientProxy) {}
 
   @ApiOperation({summary: 'Регистрация пользователя'})
   @ApiResponse({status: 200})

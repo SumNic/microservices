@@ -1,11 +1,11 @@
 import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
-import { Roles } from 'src/auth/roles-auth.decorator';
-import { RolesGuard } from 'src/auth/roles.guard';
+// import { Roles } from 'src/auth/roles-auth.decorator';
+// import { RolesGuard } from 'src/auth/roles.guard';
 import { CreateRoleDto } from './dto/create-roles.dto';
 import { AddRoleDto } from './dto/add-role.dto';
 import { RolesService } from './roles.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Role } from './roles.model';
+// import { Role } from './roles.model';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 
 @ApiTags('Роли пользователей')

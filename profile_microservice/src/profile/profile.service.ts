@@ -40,7 +40,7 @@ export class ProfileService {
     async removeProfile(id: number) {
         const profile = await this.profileRepository.findByPk(id);
         if(!profile) {
-            throw new RpcException('Указанный пользователь не существует');
+            return new RpcException('Указанный пользователь не существует');
         }
         await profile.destroy();
         return profile;

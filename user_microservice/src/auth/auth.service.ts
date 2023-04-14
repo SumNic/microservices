@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, UnauthorizedException } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { InjectModel } from '@nestjs/sequelize';
 import { JwtService } from '@nestjs/jwt';
@@ -22,10 +22,10 @@ export class AuthService {
         return this.generateToken(user);
     }
 
-    async registration(dto: CreateUserDto) {
+    async registration(dto: CreateUserDto): Promise<CreateUserDto | any> {
         const candidate = await this.getUserByEmail(dto.email);
         if(candidate) {
-            throw new RpcException('Пользователь с таким email существует')
+            return new RpcException('Пользователь с таким email существует')
         }
         const hashPassword = await bcrypt.hash(dto.password, 5);
         const user = await this.userRepository.create({...dto, password: hashPassword});
@@ -43,13 +43,13 @@ export class AuthService {
         }
     }
 
-    private async validateUser(userDto: CreateUserDto) {
+    private async validateUser(userDto: CreateUserDto): Promise<CreateUserDto | any> {
         const user = await this.getUserByEmail(userDto.email);
         const passwordEquals = await bcrypt.compare(userDto.password, user.password);
         if (user && passwordEquals) {
             return user;
         }
-        throw new UnauthorizedException({message: 'Некорректный email или пароль'})
+        return new UnauthorizedException({message: 'Некорректный email или пароль'})
     }
 
     async getUserByEmail(email: string) {
@@ -67,7 +67,7 @@ export class AuthService {
         // Проверка, чтобы меняемый email не совпадал с email уже существующих пользователей,
         // то есть этот email может быть только у редактируемого пользователя
         if(candidate && candidate.id !== +id) {
-            throw new RpcException('Пользователь с таким email существует');
+            return new RpcException('Пользователь с таким email существует');
         }
         const user = await this.userRepository.findByPk(id);
         const hashPassword = await bcrypt.hash(editDto.password, 5);
@@ -78,7 +78,7 @@ export class AuthService {
     async removeUser(id: number) {
         const user = await this.userRepository.findByPk(id);
         if(!user) {
-            throw new RpcException('Указанный пользователь не существует');
+            return new RpcException('Указанный пользователь не существует');
         }
         await user.destroy();
         return user;

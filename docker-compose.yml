@@ -13,6 +13,8 @@ services:
     ports:
     - 7000:7000
     - 9229:9229
+    depends_on:
+      - rabbitmq
     command: npm run start:dev
     restart: always
   profile:
@@ -24,9 +26,6 @@ services:
     volumes:
       - ./profile_microservice:/app
       - /app/node_modules
-    ports:
-    - 5000:5000
-    - 9229:9229
     command: npm run start:dev
     depends_on:
       - postgres
@@ -65,7 +64,7 @@ services:
     hostname: rabbitmq
     restart: always
     volumes:
-      - ./rabbitmq:/var/lib/rabbitmq
+      - /var/lib/rabbitmq
     ports:
       - 15672:15672
       - 5672:5672

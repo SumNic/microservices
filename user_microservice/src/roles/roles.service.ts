@@ -24,13 +24,13 @@ export class RolesService {
         return role;
     }
 
-    async addRole(dto: AddRoleDto) {
+    async addRole(dto: AddRoleDto): Promise<AddRoleDto | any> {
         const user = await this.userRepository.findByPk(dto.userId);
         const role = await this.getRoleByValue(dto.value);
         if (role && user) {
             await user.$add('role', role.id);
             return dto;
         }
-        throw new RpcException('Пользователь или роль не найдены');
+        return new RpcException('Пользователь или роль не найдены');
     }
 }

@@ -17,8 +17,10 @@ export class AuthController {
         ) {}
 
     @MessagePattern('registration')
-    async handleUserCreated(@Payload() dto: CreateUserDto): Promise<CreateUserDto | any> {
+    async handleUserCreated(@Payload() dto: CreateUserDto) {
         const user = this.authService.registration(dto);
+        // return req
+        // return new RpcException('Пользователь с таким email существует')
         const userId =(await user).id
         this.client.emit('profile', {...dto, userId: userId});
         return user;

@@ -1,7 +1,9 @@
-import { Controller, Inject, } from '@nestjs/common';
-import { ClientProxy, MessagePattern, Payload, RpcException } from '@nestjs/microservices';
+import { Controller, Inject, Post, Res, UseInterceptors, } from '@nestjs/common';
+import { ClientProxy, Ctx, EventPattern, MessagePattern, Payload, RmqContext, RpcException } from '@nestjs/microservices';
 import { CreateUserDto } from './dto/create-user.dto';
 import { AuthService } from './auth.service';
+import { FileInterceptor } from '@nestjs/platform-express';
+import { Response } from 'express';
 
 @Controller()
 export class AuthController {
@@ -13,16 +15,30 @@ export class AuthController {
 
     @MessagePattern('registration')
     async handleUserCreated(@Payload() dto: CreateUserDto) {
-        const user = this.authService.registration(dto);
-        const userId =(await user).id
-        this.client.emit('profile', {...dto, userId: userId});
-        return user;
+        const userData = await this.authService.registration(dto);
+        return userData;
     }
 
     @MessagePattern('login')
-    async handleUserAuth(@Payload() dto: CreateUserDto): Promise<{token: string}> {
+    async handleUserAuth(@Payload() dto: CreateUserDto): Promise<{ accessToken: string; refreshToken: string; }> {
         return this.authService.login(dto);
     }
+
+    @MessagePattern('logout')
+    async handleUserAutput(@Payload() refreshToken: string): Promise<number> {
+        return this.authService.logout(refreshToken);
+    }
+
+    @MessagePattern('activate')
+    async handleUserActivate(@Payload() activationLink: string) {
+        return this.authService.activate(activationLink);
+    }
+
+    @MessagePattern('refresh')
+    async handleUserRefresh(@Payload() refreshToken: string) {
+        return this.authService.refresh(refreshToken);
+    }
+    // : Promise<{token: string}>
     
     @MessagePattern('getOneUser')
     async getOneUser(@Payload() id: number) {

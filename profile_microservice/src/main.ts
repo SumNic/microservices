@@ -4,8 +4,6 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
 
-  console.log(process.env.RABBIT_URL)
-
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {
     transport: Transport.RMQ,
     options: {

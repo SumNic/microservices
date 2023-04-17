@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
 
@@ -8,7 +9,7 @@ async function bootstrap() {
 
   // NestFactory.create класс с методом позволяющим создать приложение
   const app = await NestFactory.create(AppModule);
-
+  
   const config = new DocumentBuilder()
       .setTitle('Проект на NestJs + Typescript')
       .setDescription('Домашнее задание')
@@ -17,7 +18,8 @@ async function bootstrap() {
       .build()
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, document);
-
+  app.use(cookieParser());
+  
   await app.listen(PORT, () => console.log(PORT));
 }
 bootstrap();

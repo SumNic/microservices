@@ -9,6 +9,10 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 import { RolesModule } from 'src/roles/roles.module';
 import { Role } from 'src/roles/roles.model';
 import { UserRoles } from 'src/roles/user-roles.model';
+import { Token } from './token.model';
+import { MailerModule } from '@nestjs-modules/mailer';
+import { MailService } from 'src/mail/mail.service';
+import { MailModule } from 'src/mail/mail.module';
 
 @Module({
   providers: [AuthService],
@@ -29,19 +33,37 @@ import { UserRoles } from 'src/roles/user-roles.model';
         },
       },
     ]),
-    SequelizeModule.forFeature([Role, User, UserRoles]),
+    SequelizeModule.forFeature([Role, User, UserRoles, Token]),
     forwardRef(() => RolesModule),
-    JwtModule.register({
-      secret: process.env.PRIVATE_KEY || 'SECRET',
-      signOptions: {
-        expiresIn: '24h'
-      }
-    }),
+    JwtModule.register({}),
+    // MailerModule.forRoot({
+    //   transport: {
+    //     host: process.env.SMTP_HOST,
+    //     port: process.env.SMTP_PORT,
+    //     secure: false,
+    //     auth: {
+    //       user: process.env.SMTP_USER,
+    //       pass: process.env.SMTP_PASSWORD,
+    //     },
+    //   },
+      // defaults: {
+      //   from: '"No Reply" <noreply@example.com>',
+      // },
+      // template: {
+      //   dir: join(__dirname, 'templates'),
+      //   adapter: new HandlebarsAdapter(), // or new PugAdapter() or new EjsAdapter()
+      //   options: {
+      //     strict: true,
+      //   },
+      // },
+    // }),
+    MailModule
   ],
   
   exports: [
     AuthService,
-    JwtModule
+    JwtModule,
+    // MailerModule
   ],
   
   controllers: [AuthController]

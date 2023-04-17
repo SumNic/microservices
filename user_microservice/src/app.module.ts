@@ -8,6 +8,9 @@ import { User } from './auth/auth.model';
 import { RolesModule } from './roles/roles.module';
 import { Role } from './roles/roles.model';
 import { UserRoles } from './roles/user-roles.model';
+import { Token } from './auth/token.model';
+import { MailerModule } from '@nestjs-modules/mailer';
+import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [
@@ -24,12 +27,14 @@ import { UserRoles } from './roles/user-roles.model';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User, Role, UserRoles],
+      models: [User, Role, UserRoles, Token],
       synchronize: true,
       autoLoadModels: true
     }),
     AuthModule,
     RolesModule,
+    MailerModule,
+    MailModule
   ],
   controllers: [],
   providers: [],

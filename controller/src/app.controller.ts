@@ -1,31 +1,89 @@
-import { Body, Controller, Delete, Get, Inject, Param, Post, Put, Req, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
-import { ClientProxy, Ctx, RmqContext } from '@nestjs/microservices';
+import { Body, Controller, Delete, Get, Inject, Param, Post, Put, Req, Res, UseGuards, UseInterceptors } from '@nestjs/common';
+import { ClientProxy } from '@nestjs/microservices';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { RolesGuard } from './roles.guard';
 import { Roles } from './roles-auth.decorator';
+import { AppService } from './app.service';
+import { AnySrvRecord } from 'dns';
+import { Request, Response } from 'express';
+
 
 @ApiTags('Общий')
 @Controller('user')
 export class AppController {
-  constructor(@Inject('CONTROLLER_SERVICE') private client: ClientProxy) {}
+  constructor(
+    @Inject('CONTROLLER_SERVICE') private client: ClientProxy,
+    private appService: AppService,) {}
 
   @ApiOperation({summary: 'Регистрация пользователя'})
   @ApiResponse({status: 200})
   @Post('/registration')
   @UseInterceptors(FileInterceptor('image'))
-    registration(@Body() dto) {
-      return this.client.send('registration', dto);
+    async registration(@Body() dto, @Res({ passthrough: true }) res: Response ) {
+      return this.client.send('registration', dto)
+      .pipe(
+        map(elem => {
+          res.cookie('refreshToken', elem.refreshToken, {maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true})
+          return elem;
+        })
+      );
   }
 
   @ApiOperation({summary: 'Ауторизация пользователя'})
   @ApiResponse({status: 200, description: 'Token'})
   @Post('/login')
   @UseInterceptors(FileInterceptor('image'))
-    auth(@Body() dto) {
-      return this.client.send('login', dto);
+    auth(@Body() dto, @Res({ passthrough: true }) res: Response ) {
+      return this.client.send('login', dto)
+      .pipe(
+        map(elem => {
+          res.cookie('refreshToken', elem.refreshToken, {maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true})
+          return elem;
+        })
+      );
+  }
+
+  // Выход из профиля
+  @ApiOperation({summary: 'Выход из профиля'})
+  @ApiResponse({status: 200, description: 'Удаление Token'})
+  @Post('/logout')
+  @UseInterceptors(FileInterceptor('image'))
+  logout(@Req() req: Request, @Res({ passthrough: true }) res: Response ) {
+    const {refreshToken} = req.cookies;
+    return this.client.send('logout', refreshToken)
+    .pipe(
+      map(elem => {
+        res.clearCookie('refreshToken')
+        return elem.token;
+      })
+    );
+  }
+
+  // Refresh токен 
+  @ApiOperation({summary: 'Обновление токена'})
+  @ApiResponse({status: 200, description: 'Обновление токена'})
+  @Get('/refresh')
+  refresh(@Req() req: Request, @Res({ passthrough: true }) res: Response ) {
+    const {refreshToken} = req.cookies;
+    return this.client.send('refresh', refreshToken)
+    .pipe(
+      map(elem => {
+        res.cookie('refreshToken', elem.refreshToken, {maxAge: 7 * 24 * 60 * 60 * 1000, httpOnly: true})
+          return elem;
+      })
+    );
+}
+
+  // Активация аккаунта
+  @ApiOperation({summary: 'Активация аккаунта'})
+  @ApiResponse({status: 200, description: 'Ссылка для активации'})
+  @Get('/activate/:link')
+  activate(@Param('link') activationLink: string, @Res() res: any) {    
+    res.redirect(process.env.CLIENT_URL);
+    return this.client.send('activate', activationLink);
   }
 
   @ApiOperation({summary: 'Получить одного пользователя по Id'})
@@ -86,8 +144,8 @@ export class AppController {
       return this.client.send('remove', id);
   }
 
-  @Roles('ADMIN')
-  @UseGuards(RolesGuard)
+  // @Roles('ADMIN')
+  // @UseGuards(RolesGuard)
   @ApiOperation({summary: 'Создание новой роли'})
   @ApiResponse({status: 200})
   @Post('/roles')

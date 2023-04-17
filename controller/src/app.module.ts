@@ -3,8 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { AppController } from './app.controller';
-
-console.log(process.cwd())
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -35,6 +34,6 @@ console.log(process.cwd())
     JwtModule
   ],
   controllers: [AppController],
-  providers: [],
+  providers: [AppService],
 })
 export class AppModule {}

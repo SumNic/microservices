@@ -144,8 +144,8 @@ export class AppController {
       return this.client.send('remove', id);
   }
 
-  // @Roles('ADMIN')
-  // @UseGuards(RolesGuard)
+  @Roles('ADMIN')
+  @UseGuards(RolesGuard)
   @ApiOperation({summary: 'Создание новой роли'})
   @ApiResponse({status: 200})
   @Post('/roles')

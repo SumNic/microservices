@@ -38,7 +38,6 @@ export class AuthController {
     async handleUserRefresh(@Payload() refreshToken: string) {
         return this.authService.refresh(refreshToken);
     }
-    // : Promise<{token: string}>
     
     @MessagePattern('getOneUser')
     async getOneUser(@Payload() id: number) {
